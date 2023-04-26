@@ -4,7 +4,7 @@ public:
     {
      int start=0,end =0,ans=0;
      int n=s.length();
-     map<char,int> mp;
+     unordered_map<char,int> mp;
      while(end<n)
      {
        mp[s[end]]++;
