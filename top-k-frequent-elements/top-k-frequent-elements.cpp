@@ -2,10 +2,7 @@ class Solution {
 public:
     typedef pair<int, int> pd;
     struct myComp {
-    constexpr bool operator()(
-        pair<int, int> const& a,
-        pair<int, int> const& b)
-        const noexcept
+     bool operator()( pair<int, int> a,pair<int, int>  b)
     {
         return a.second < b.second;
     }
