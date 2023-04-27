@@ -1,26 +1,37 @@
 class Solution {
 public:
-    static bool comp(pair<int,int> a,pair<int,int> b)
+    typedef pair<int, int> pd;
+    struct myComp {
+    constexpr bool operator()(
+        pair<int, int> const& a,
+        pair<int, int> const& b)
+        const noexcept
     {
-       return a.second>b.second;
+        return a.second < b.second;
     }
+};
     vector<int> topKFrequent(vector<int>& nums, int k) 
     {  
         vector<int> ans;
-        map<int,int> mpp;//element and count
+        unordered_map<int,int> mpp;
         for(int i=0;i<nums.size();i++)
         mpp[nums[i]]++;
 
-        vector<pair<int,int>> v(mpp.begin(),mpp.end());//converting map to a vector of pairs
-
-        sort(v.begin(),v.end(),comp);
+        priority_queue<pd, vector<pd>, myComp> pq;
+        for(auto it:mpp)
+        pq.push(it);//max heap is ready
 
         for(int i=0;i<k;i++)
-        ans.push_back(v[i].first);
+        {
+            auto it=pq.top();
+            ans.push_back(it.first);
+            pq.pop();
+        }
+      
+      return ans;
 
-        return ans;
 
-    
+
         
     }
 };
