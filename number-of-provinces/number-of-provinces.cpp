@@ -3,17 +3,17 @@ public:
     void dfs( int node,vector<int> adj[], int visited[] )
     {
         visited[node]=1;
-        // for(int i=0;i<adj[node].size();i++)
-        // {   
-        //     if(visited[adj[node][i]]==0)
-        //     dfs(adj[node][i], adj , visited );
-        // }
+        for(int i=0;i<adj[node].size();i++)
+        {   
+            if(visited[adj[node][i]]==0)
+            dfs(adj[node][i], adj , visited );
+        }
       
-      for(auto it:adj[node])
-      {
-          if(!visited[it])
-          dfs(it,adj,visited);
-      }
+    //   for(auto it:adj[node])
+    //   {
+    //       if(!visited[it])
+    //       dfs(it,adj,visited);
+    //   }
     }
    
    
@@ -36,6 +36,7 @@ public:
         
         int visited[n];
         memset(visited, 0, sizeof(visited));
+        //how you can initialize an array 
         int count=0;
         for(int i=0;i<n;i++)
         {
