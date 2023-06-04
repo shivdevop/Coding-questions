@@ -48,8 +48,10 @@ public:
      for(int i=0;i<m;i++)
      {
          for(int j=0;j<n;j++)
-         {
-             if(visited[i][j]==1)
+         {   
+             // if(visited[i][j]!=2 && visited[i][j]==1)
+             //i can use the above if condition also but it doesnt make sense as i initially initialized the entire visited matrix with the grid matrix so i just need to make sure that no 1(or fresh oranges) are left 
+             if( visited[i][j]==1)
              return -1;
          }
      }
