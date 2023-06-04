@@ -49,7 +49,7 @@ public:
      {
          for(int j=0;j<n;j++)
          {
-             if(visited[i][j]!=2 && visited[i][j]==1)
+             if(visited[i][j]==1)
              return -1;
          }
      }
