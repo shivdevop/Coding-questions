@@ -7,15 +7,15 @@ public:
         for(auto it:adj[node])
         {
             if(visited[it]==-1)
-          {  if(checkdfsoddcycle(it,!color,visited,adj)==true)
-            return true;
+          {  if(checkdfsoddcycle(it,!color,visited,adj)==false)
+            return false;//this is a very important step that if any of the dfs calls says that yes there exists a odd length cycle or we cant color encode with just two colors such that no nearby nodes hasve the same color  then it cant be bipartite 
           }
             else if(visited[it]==visited[node])
-            return true;
+            return false;
         }
 
 
-      return false;
+      return true;
     }
     bool isBipartite(vector<vector<int>>& graph) 
     {   int m=graph.size();
@@ -33,7 +33,7 @@ public:
         {
             if(visited[i]==-1)
             {
-                if(checkdfsoddcycle(i,0,visited,adj)==true)
+                if(checkdfsoddcycle(i,0,visited,adj)==false)
                  return false;
             }
         }
