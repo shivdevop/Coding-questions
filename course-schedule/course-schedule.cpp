@@ -21,6 +21,9 @@ public:
         vector<vector<int>> adj(numCourses);
         vector<int> visited(numCourses, 0);
         vector<int> pathVisited(numCourses, 0);
+        // we wont be using memsets and arrays for visited and pathVisited arrays otherwise TLE aa jata hai !!!
+        
+        
 
         for (auto prerequisite : prerequisites) {
             adj[prerequisite[1]].push_back(prerequisite[0]);
