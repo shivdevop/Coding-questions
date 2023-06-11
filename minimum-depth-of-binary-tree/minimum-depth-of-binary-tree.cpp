@@ -17,7 +17,7 @@ public:
         return 0;
         if(root->left==NULL && root->right==NULL)
         return 1;
-        int lheight=1000000,rheight=100000;
+        int lheight=100000,rheight=100000;
         if(root->left)
          lheight=minDepth(root->left);
         if(root->right)
