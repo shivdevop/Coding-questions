@@ -14,16 +14,15 @@ public:
     int maxLevelSum(TreeNode* root) {
   
  
- if(root==NULL)
-        return -1;
+//  if(root==NULL)
+//         return -1;
         //we can use level order traversal using queue 
-        //on ending a level, we can add the pair of level and sum either to a vector or a map
+        
         queue<TreeNode*> q;
         q.push(root);
         q.push(NULL);
         int sum=0;
         int level=1;
-        // vector<pair<int,int>> v;
         int ans=0;
         int maxi=INT_MIN;
         while(!q.empty())
@@ -44,7 +43,6 @@ public:
                    maxi=sum;
                    ans=level;
                }
-            //  v.push_back({level,sum});
               level++;
               sum=0;
               if(!q.empty())
@@ -52,8 +50,6 @@ public:
             }
           
         }//end of while
-        // sort(v.begin(),v.end(),comp);
-        // int ans=v[0].first;
         return ans;
 
 
