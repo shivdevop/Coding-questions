@@ -14,8 +14,8 @@ public:
     int maxLevelSum(TreeNode* root) {
   
  
-//  if(root==NULL)
-//         return -1;
+ if(root==NULL)
+        return -1;
         //we can use level order traversal using queue 
         
         queue<TreeNode*> q;
