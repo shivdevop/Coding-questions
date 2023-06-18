@@ -31,8 +31,14 @@ public:
             TreeNode* temp=q.front();
             q.pop();
             if(temp!=NULL)
+            {
             sum+=temp->val;
-            if(temp==NULL)
+            if(temp->left !=NULL )
+            q.push(temp->left);
+             if(temp->right !=NULL)
+            q.push(temp->right);
+            }
+            else if(temp==NULL)
             { if(sum>maxi)
                {
                    maxi=sum;
@@ -44,13 +50,7 @@ public:
               if(!q.empty())
               q.push(NULL);
             }
-            else 
-            {
-                if(temp->left !=NULL )
-            q.push(temp->left);
-             if(temp->right !=NULL)
-            q.push(temp->right);
-            }
+          
         }//end of while
         // sort(v.begin(),v.end(),comp);
         // int ans=v[0].first;
