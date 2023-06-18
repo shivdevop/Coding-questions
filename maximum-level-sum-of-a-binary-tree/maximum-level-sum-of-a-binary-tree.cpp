@@ -22,7 +22,7 @@ public:
         q.push(root);
         q.push(NULL);
         int sum=0;
-        int level=0;
+        int level=1;
         // vector<pair<int,int>> v;
         int ans=0;
         int maxi=INT_MIN;
@@ -54,7 +54,7 @@ public:
         }//end of while
         // sort(v.begin(),v.end(),comp);
         // int ans=v[0].first;
-        return ans+1;
+        return ans;
 
 
     }
