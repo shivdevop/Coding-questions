@@ -22,7 +22,7 @@ public:
                 long long adjnode = it.first;
                 if(d + wt < dist[adjnode]){
                     dist[adjnode] = d + wt;
-                    ways[adjnode] = ways[node];
+                    ways[adjnode] = ways[node]% 1000000007;
                     pq.push({ dist[adjnode], adjnode});
                 }
                 else if(d + wt == dist[adjnode])
