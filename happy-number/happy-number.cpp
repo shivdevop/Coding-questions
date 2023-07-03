@@ -4,10 +4,30 @@ public:
     {   
         if(n==1)
         return true;
-        unordered_map<int,int> mpp;
-        mpp[n]++;
-        while(n>1)
-        {
+    //     unordered_map<int,int> mpp;
+    //     mpp[n]++;
+    //     while(n>1)
+    //     {
+    //         int newval=0;
+    //         while(n>0)
+    //         {
+    //           int digit=n%10;
+    //           n=n/10;
+    //           newval+=(digit*digit);
+    //         }
+    //         n=newval;
+    //         if(newval==1)
+    //         return true;
+    //         else if(mpp.find(newval)!=mpp.end())
+    //         return false;
+    //         mpp[newval]++;
+    //     }
+    //   return false;
+
+     set<int> s; 
+     s.insert(n);
+      while(n>1)
+      {
             int newval=0;
             while(n>0)
             {
@@ -18,10 +38,11 @@ public:
             n=newval;
             if(newval==1)
             return true;
-            else if(mpp.find(newval)!=mpp.end())
+            else if(s.find(newval)!=s.end())
             return false;
-            mpp[newval]++;
-        }
-      return true;
+            s.insert(newval);
+      }
+      return false;
+
     }
 };
