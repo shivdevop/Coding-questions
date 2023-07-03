@@ -34,7 +34,7 @@ public:
         if(!root->left && !root->right )//if its a leaf node 
          return root->val==targetSum;
 
-         bool output=false;
+         bool output;
          
          if(root->left)
          output=hasPathSum(root->left,targetSum-root->val);
