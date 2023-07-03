@@ -22,6 +22,6 @@ public:
             return false;
             mpp[newval]++;
         }
-      return false;
+      return true;
     }
 };
