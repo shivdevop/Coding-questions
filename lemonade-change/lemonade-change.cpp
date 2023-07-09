@@ -1,50 +1,39 @@
 class Solution {
 public:
-    bool lemonadeChange(vector<int>& bills) {
-        unordered_map<int,int> change;
-
-        if(bills[0]>5)
+   bool lemonadeChange(vector<int>& bills) {
+    int count5 = 0;
+    int count10 = 0;
+    
+    if (bills[0] > 5)
         return false;
-         
-        int i=0;
-        while(i<bills.size())
-        {
-          if(bills[i]==5)
-          {
-              change[5]++;
-            
-          }
-          else if(bills[i]==10)
-          {
-              if(change[5]>=1)
-              change[5]--;
-              else 
-              return false;
-
-              change[10]++;
-          }
-          else 
-          {
-              if(change[5]>=1 && change[10]>=1)
-              {
-                  change[5]--;
-                  change[10]--;
-              }
-              else if(change[5]>=3)
-              {
-                  change[5]-=3;
-              }
-              else
-              return false;
-
-              change[20]++;
-
-          }
-          i++;
+    
+    for (int i = 0; i < bills.size(); i++) {
+        int bill = bills[i];
+        
+        if (bill == 5) {
+            count5++;
+        } else if (bill == 10) {
+            if (count5 > 0) {
+                count5--;
+                count10++;
+            } else {
+                return false;
+            }
+        } else if (bill == 20) {
+            if (count10 > 0 && count5 > 0) {
+                count10--;
+                count5--;
+            } else if (count5 >= 3) {
+                count5 -= 3;
+            } else {
+                return false;
+            }
         }
-return true;
-
     }
+    
+    return true;
+}
+
 };
 //if the first amount is greater than 5 then directly false
 
