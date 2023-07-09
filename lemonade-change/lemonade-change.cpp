@@ -1,7 +1,7 @@
 class Solution {
 public:
    bool lemonadeChange(vector<int>& bills) {
-    int count5 = 0;
+      int count5 = 0;
     int count10 = 0;
     
     if (bills[0] > 5)
