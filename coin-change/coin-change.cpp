@@ -30,7 +30,7 @@ public:
     int coinChange(vector<int>& coins, int amount)
     {
      int n=coins.size();
-     vector<vector<int>> dp(n,vector<int>(amount+1,-1));
+     vector<vector<int>> dp(n,vector<int>(amount+1,0));
      
      //BASE CASES 
      for(int t=0;t<=amount;t++)
