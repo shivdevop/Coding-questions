@@ -8,12 +8,12 @@ public:
 
        if(open<n)
        {
-        //    s+="(";
+        //    s+="(";  --> this way wont work 
            f(n,open+1,close,s+"(",ans);
        }
        if(close<open)
        {
-        //    s+=")";
+        //    s+=")";   --> this way wont work 
            f(n,open,close+1,s+")",ans);
        }
 
