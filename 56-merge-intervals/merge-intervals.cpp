@@ -1,16 +1,16 @@
 class Solution {
 public:
-    static bool comp(vector<int> a,vector<int> b)
-    {
-        if(a[0]==b[0])
-        return a[1]<b[1];
+    // static bool comp(vector<int> a,vector<int> b)
+    // {
+    //     if(a[0]==b[0])
+    //     return a[1]<b[1];
 
-        return a[0]<b[0];
-    }
+    //     return a[0]<b[0];
+    // }
     vector<vector<int>> merge(vector<vector<int>>& intervals) {
         vector<vector<int>> ans;
         int n=intervals.size();
-        sort(intervals.begin(),intervals.end(),comp);
+        sort(intervals.begin(),intervals.end());
         
         vector<int> temp={intervals[0][0],intervals[0][1]};
 
