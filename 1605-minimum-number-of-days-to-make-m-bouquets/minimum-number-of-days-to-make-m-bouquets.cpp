@@ -23,8 +23,8 @@ public:
    }
     int minDays(vector<int>& bloomDay, int m, int k) {
         
-     long long n=bloomDay.size();
-        long long x=(long long)m*k;
+     int n=bloomDay.size();
+        long long x=(long long)m*k; //we cannot store integer into a long variable so we have to make the right side  as LL as well otherwise we will encounter runtime error !!!!
         if(x>n)
         return -1;
         int low=INT_MAX;
