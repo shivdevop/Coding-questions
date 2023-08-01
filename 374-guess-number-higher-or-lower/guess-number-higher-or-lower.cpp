@@ -22,6 +22,6 @@ public:
             else
             high=mid-1;
         }
-        return 1;
+        return 1; //This is simply a bogus statement to fulfill the syntax necessities of returning something outside the loop eventually if the fn has a certain return type. Value will always return at mid anyways !!!!! 
     }
 };
