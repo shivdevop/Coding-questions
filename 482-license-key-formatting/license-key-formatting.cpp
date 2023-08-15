@@ -23,7 +23,7 @@ public:
             if (isalnum(c)) {
                 ans[idx--] = isalpha(c) ? toupper(c) : c;
                 segmentCount++;
-                if (segmentCount == k && idx >= 0) {
+                if (segmentCount == k && idx > 0) {
                     ans[idx--] = '-';
                     segmentCount = 0;
                 }
